@@ -1,0 +1,17 @@
+{
+  "listing_type": "for_sale",
+  "city": "den-haag",
+  "only_available": true,
+  "extra_search_range": 0,
+  "minimum_price": 500,
+  "maximum_price": 0,
+  "minimum_house_size": 0,
+  "maximum_house_size": 0,
+  "minimum_plot_size": 0,
+  "maximum_plot_size": 0,
+  "minimum_rooms": 0,
+  "maximum_rooms": 0,
+  "minimum_bedrooms": 0,
+  "maximum_bedrooms": 0,
+  "type_of_house": null
+}
