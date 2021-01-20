@@ -4,7 +4,7 @@ Scrape dutch real estate website funda
 ## How to use the scraper
 1. Clone the repository
 2. run `pip install -r requirements.txt` (you'll need at least python 3.6)
-3. Edit the config.json (See [config](###config) for more information)
+3. Edit the config.json (See [config.json](#configjson) for more information)
 4. Run `scrapy crawl funda_listings -o output.csv` to get a CSV of outputs on the first page of Funda. 
 4. (optional) Alternatively you can save it as a json, xml or a bunch of other extensions by simply changing the extension. See: https://docs.scrapy.org/en/latest/topics/feed-exports.html for more information
 
