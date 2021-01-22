@@ -5,7 +5,7 @@ from ..utils import generate_url
 
 class FundaListingsSpider(scrapy.Spider):
     name = 'funda_listings'
-    allowed_domains = ["https://www.funda.nl/"]
+    allowed_domains = ["funda.nl"]
 
     def start_requests(self):
         return [scrapy.FormRequest(generate_url())]
