@@ -6,6 +6,9 @@ from ..utils import generate_url
 class FundaListingsSpider(scrapy.Spider):
     name = 'funda_listings'
     allowed_domains = ["funda.nl"]
+    custom_settings = {
+        "FEED_EXPORT_FIELDS": ["address", "zipcode", "price", "house_size", "plot_size", "rooms", "url", "image", "funda_id"]
+    }
 
     def start_requests(self):
         return [scrapy.FormRequest(generate_url())]
@@ -25,6 +28,7 @@ class FundaListingsSpider(scrapy.Spider):
                 plot_size = properties.css("span[title*='Perceeloppervlakte']::text").get()
                 rooms = properties.css("li::text")[-1].get()
                 image = result.css(".search-result-image img::attr(src)").get()
+                funda_id = result.css("div.search-result__header-title-col a::attr(data-search-result-item-anchor)").get()
 
                 items = BasicHouseItem()
                 items['url'] = f"https://www.funda.nl/{url}"
@@ -35,5 +39,6 @@ class FundaListingsSpider(scrapy.Spider):
                 items['plot_size'] = plot_size
                 items['rooms'] = rooms
                 items['image'] = image
+                items['funda_id'] = funda_id
 
                 yield items
